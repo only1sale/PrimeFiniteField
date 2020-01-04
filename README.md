@@ -1,6 +1,11 @@
-## Finite Field 
+## Finite Field classes
 
-This class represents an implementation of a finite field over prime p (i.e. integer modulo $$p$$: $$\mathbb{Z}_p$$). It was written for use with [Eigen3](http://eigen.tuxfamily.org/index.php?title=Main_Page) library for linear algebra, so `GenericNumTraits` is defined for this class. 
+1. **FFp**: This class represents an implementation of a finite field over prime p (i.e. integer modulo $$p$$: $$\mathbb{Z}_p$$). 
+2. **FFq**:
+3. FFpoly:
+4. **Polynomial**: Auxiliary polynomial template class. Implements all basic operations with polynomials. 
+
+All classes are written for use with [Eigen3](http://eigen.tuxfamily.org/index.php?title=Main_Page) library for linear algebra, so `GenericNumTraits` is defined for all of them. 
 
 ### Tests
 
@@ -25,6 +30,6 @@ z = x / y;
 
 ### To do:
 
-1. Table of multiplicative inverses is generated using an exhaustive search (with complexity $$\mathcal{O}(p^2)$$). Instead of an exhaustive search an extended Euclid algorithm can be used to generate all multiplicative inverses. As this library is intended for use with relatively small  $$p$$ values, this is not a big priority. 
+1. In the case of **FFp** class, the table of multiplicative inverses is generated using an exhaustive search (with complexity $$\mathcal{O}(p^2)$$). Instead of an exhaustive search an extended Euclid algorithm can be used to generate all multiplicative inverses. As this library is intended for use with relatively small  $$p$$ values, this is not a big priority. 
 
-2. Assertion `isPrime<p>()`is done only in debug mode. 
+2. Assertion `isPrime<p>()` (for the **FFp** class) is done only in debug mode. 

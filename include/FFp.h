@@ -67,13 +67,12 @@ namespace ffpp {
             return p;
         }
 
-        static void printTable()
-        {
+        static void printTable() {
             for(std::size_t i = 0; i < p; ++i)
                 std::cout << i <<"^(-1) = " << pMinv[i] << std::endl;
         }
 
-        FFp(int a = 0) : _val(mod(a)) {}
+        FFp(int a = 0) : _val(mod(a)) { }
 
         explicit operator int() const { return _val; }
         explicit operator bool()const { return _val != 0; }
@@ -163,7 +162,7 @@ namespace ffpp {
             return *this;
         }
 
-        FFp operator- () {
+        FFp operator- () const {
             return FFp(-_val);
         }
 
